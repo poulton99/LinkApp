@@ -1,0 +1,289 @@
+// http://ionicframework.com/docs/v2/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+ion-navbar {
+    // font-family: "Lato";
+}
+
+.white-bg {
+    background: #fff;
+}
+
+.positive {
+    color: $bleu_1;
+}
+
+.category {
+    font-size: 15px;
+    color: $bleu_3;
+}
+
+.title {
+    font-size: 23px;
+}
+
+.date {
+    color: #888;
+}
+
+.details {
+    line-height: 30px;
+    text-align: justify;
+}
+
+.white {
+    color: white;
+}
+
+.blue {
+    background: $bleu_1;
+    color: #fff;
+    .item-ios,
+    .item-md {
+        background: transparent;
+        padding-left: 15px;
+        .item-inner {
+            border-bottom: 2px solid $bleu_1;
+            ion-label {
+                color: #fff;
+            }
+        }
+    }
+}
+
+img-card {
+    width: 100%;
+}
+
+button {
+    // font-family: "Lato";
+    font-style: "bold";
+}
+
+.white-bg {
+    background: #fff;
+}
+
+.toolbar-title-ios,
+.toolbar-title-md {
+    text-transform: capitalize !important;
+    // font-family: "Lato" !important;
+    font-size: 1.8rem !important;
+}
+
+.back-button-text {
+    display: none !important;
+}
+
+.back-button {
+    color: white;
+}
+
+.content.content-md,
+.content.content-ios {
+    color: #000;
+    background-color: #ddd;
+}
+
+.toolbar-background-md,
+.toolbar-background-ios {
+    border-color: #b2b2b2;
+    background: $bleu_1;
+}
+
+.toolbar-background-md .ion-button,
+.toolbar-background-ios .ion-button {
+    color: #fff;
+}
+
+.toolbar-title-md,
+.toolbar-title-ios {
+    color: #ffffff;
+}
+
+.toolbar-button-md {
+    color: #fff;
+}
+
+.menuContent {
+    background: $bleu_1;
+}
+
+.menuContent {
+    border-right: 2px solid $bleu_1;
+    .item-ios,
+    .item-md {
+        background: transparent;
+        padding-left: 15px;
+        .item-inner {
+            border-bottom: 2px solid $bleu_1;
+            ion-label {
+                color: $bleu_1;
+            }
+        }
+    }
+    .list-ios .item-block .item-inner,
+    .list-md .item-block .item-inner {
+        border-bottom: 2px solid $bleu_1;
+    }
+    .label-ios,
+    .label-md {
+        position: relative;
+        img {
+            position: absolute;
+            left: -35px;
+            top: 0px;
+            width: 12%;
+            display: block;
+            opacity: 0.7;
+        }
+    }
+    ion-label,
+    .input-wrapper,
+    .item-inner,
+    .item-block {
+        overflow: visible;
+    }
+}
+
+ion-item-divider {
+    background: transparent;
+}
+
+.menuHeader {
+    .toolbar-background-ios,
+    .toolbar-background-md {
+        background: $bleu_1;
+    }
+}
+
+.logoMenu {
+    img {
+        width: 50px;
+        margin: 3px;
+        display: block;
+    }
+    h1 {
+        font-size: 20px;
+        text-align: center;
+        color: white;
+    }
+    ion-header {
+        &.header-ios::after,
+        &.header-md::after,
+        .tabs-ios[tabsPlacement="top"]>.tabbar::after,
+        .footer-ios::before,
+        .tabs-ios[tabsPlacement="bottom"]>.tabbar::before,
+        .tabs-md[tabsPlacement="top"]>.tabbar::after,
+        .footer-md::before,
+        .tabs-md[tabsPlacement="bottom"]>.tabbar::before {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-image: none;
+            background: $bleu_2;
+            background-repeat: repeat-x;
+            background-position: 0 -2px;
+            content: "";
+        }
+    }
+    ion-navbar {
+        &.homeSignin {
+            .bar-button-default-ios,
+            .bar-button-clear-ios-default,
+            .bar-button-ios-default,
+            .bar-button-default-md,
+            .bar-button-clear-ùd-default,
+            .bar-button-md-default {
+                color: #fff;
+                background-color: $bleu_1;
+                height: 48px;
+                border-radius: 10px;
+                &:hover {
+                    color: $bleu_2;
+                }
+            }
+            .toolbar-background-ios,
+            .toolbar-background-md {
+                border-color: $bleu_1;
+                background: $bleu_1;
+            }
+            ion-title {
+                text-align: center;
+                margin-left: -25px;
+                .toolbar-title-ios,
+                .toolbar-title-md {
+                    color: $bleu_2;
+                    font-weight: bolder;
+                }
+            }
+        }
+        &.navSignin {
+            .bar-button-default-ios,
+            .bar-button-default-md,
+            .bar-button-clear-ios-default,
+            .bar-button-clear-md-default,
+            .bar-button-ios-default,
+            .bar-button-md-default {
+                color: #2ec95c;
+                background-color: $bleu_1;
+                height: 48px;
+                border-radius: 10px;
+            }
+            .toolbar-background-ios,
+            .toolbar-background-md {
+                border-color: $bleu_2;
+                background: #fff;
+            }
+            ion-title {
+                text-align: center;
+                margin-left: -25px;
+                .toolbar-title-ios,
+                .toolbar-title-md {
+                    color: $bleu_2;
+                    font-weight: bolder;
+                }
+            }
+        }
+        &.navLogin {
+            .toolbar-background-ios,
+            .toolbar-background-md {
+                border-color: $bleu_1;
+                background: #fff;
+            }
+            ion-title {
+                text-align: center;
+                .toolbar-title-ios,
+                .toolbar-title-md {
+                    color: $bleu_1;
+                    font-weight: bolder;
+                }
+            }
+        }
+    }
+    ion-toolbar {
+        &.navToolbar {
+            .toolbar-background-ios,
+            .toolbar-background-md {
+                background: #fff;
+                .text-ios-primary,
+                .text-md-primary {
+                    color: $bleu_2;
+                }
+            }
+        }
+    }
+}

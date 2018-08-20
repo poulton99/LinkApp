@@ -1,0 +1,55 @@
+<!--
+  Generated template for the Favorite page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <button class="white" ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Favorite</ion-title>
+        <ion-buttons end>
+            <button class="white" ion-button small clear *ngIf="mode==='card'" (click)="makelist()"><ion-icon name="list"></ion-icon></button>
+            <button class="white" ion-button small clear *ngIf="mode==='list'" (click)="makecard()"><ion-icon name="grid"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="back">
+    <ion-list text-wrap *ngIf="mode==='list'">
+        <ion-item *ngFor="let article of articles">
+            <ion-thumbnail item-right>
+                <img [src]="article.image" />
+            </ion-thumbnail>
+            <span class="category">{{article.category.name}}</span>
+            <h2 class="title"><b>{{article.title}}</b></h2>
+            <button ion-button clear (click)="detail(article)"> <ion-icon name="eye"></ion-icon> </button>
+            <button ion-button clear (click)="delete(article)"> <ion-icon name="trash"></ion-icon> </button>
+        </ion-item>
+    </ion-list>
+    <ion-list *ngIf="mode==='card'">
+        <ion-card *ngFor="let article of articles">
+
+            <ion-item>
+                <span class="positive">{{article.category.name}}</span>
+                <h2><b>{{article.title}}</b></h2>
+            </ion-item>
+
+            <ion-card-content>
+                <img [src]="article.image" class="img-card" />
+                <p class="details">{{article.resume}}</p>
+            </ion-card-content>
+            <ion-item>
+                <button ion-button clear (click)="detail(article)"> see more... </button>
+                <button ion-button clear (click)="delete(article)"> delete </button>
+            </ion-item>
+        </ion-card>
+    </ion-list>
+
+
+</ion-content>

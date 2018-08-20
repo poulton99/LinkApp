@@ -1,0 +1,32 @@
+<ion-menu secondary [content]="content">
+    <ion-header>
+        <ion-toolbar class="menuHeader">
+            <div class="logoMenu"><img src="assets/logo.png" alt="">
+            </div>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="blue" style="background:#0071bc ">
+        <ion-list no-lines>
+            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+            <ion-item-divider>Categories</ion-item-divider>
+            <button menuClose ion-item *ngFor="let c of categories" ion-item (click)="openCategory(c)">
+         {{c.name}}
+      </button>
+            <button menuClose ion-item (click)="logout()">
+        Logout
+      </button>
+
+        </ion-list>
+    </ion-content>
+    <ion-footer>
+        <button ion-item class="blue">
+        News App v0.0.1
+      </button>
+    </ion-footer>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

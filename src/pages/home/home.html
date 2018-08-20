@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar>
+        <button class="white" ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Home</ion-title>
+        <ion-buttons end>
+            <button class="white" ion-button small clear *ngIf="mode==='card'" (click)="makelist()"><ion-icon name="list"></ion-icon></button>
+            <button class="white" ion-button small clear *ngIf="mode==='list'" (click)="makecard()"><ion-icon name="grid"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list text-wrap *ngIf="mode==='list'">
+        <ion-item (click)="detail(article)" *ngFor="let article of articles">
+            <ion-thumbnail item-right>
+                <img [src]="article.image" />
+            </ion-thumbnail>
+            <span class="category">{{article.category.name}}</span>
+            <h2 class="title"><b>{{article.title}}</b></h2>
+        </ion-item>
+    </ion-list>
+    <ion-list *ngIf="mode==='card'">
+        <ion-card (click)="detail(article)" *ngFor="let article of articles">
+
+            <ion-item>
+                <span class="positive">{{article.category.name}}</span>
+                <h2 class="title"><b>{{article.title}}</b></h2>
+            </ion-item>
+
+            <ion-card-content>
+                <img [src]="article.image" class="img-card" />
+                <p class="details">{{article.resume}}</p>
+            </ion-card-content>
+        </ion-card>
+    </ion-list>
+
+    <ion-infinite-scroll (ionInfinite)="getNext($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    <ion-refresher (ionRefresh)="getArticles($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+</ion-content>
